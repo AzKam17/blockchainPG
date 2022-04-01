@@ -11,6 +11,8 @@ let JeChain = new Blockchain(holderKeyPair);
 const express = require('express')
 const app = express()
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
     res.send(JSON.stringify(JeChain.chain))
 });
