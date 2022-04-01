@@ -13,7 +13,12 @@ const app = express()
 
 app.get('/', (req, res) => {
     res.send(JSON.stringify(JeChain.chain))
-})
+});
+
+app.post('/transaction/new', (req, res) => {
+    console.log('Got body:', req.body);
+    res.sendStatus(200);
+});
 
 app.listen(process.env.PORT || 8080, () => {
     console.log(`Server is running`)
