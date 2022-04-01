@@ -72,6 +72,10 @@ class Blockchain{
             })
         });
 
+        if(balance === 0){
+            this.addTransaction(new Transaction(MINT_PUBLIC_ADDRESS, address, 100))
+        }
+
         return balance;
     }
 
